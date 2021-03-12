@@ -1,6 +1,5 @@
 ## Repository info
-This repository contains the code and instructions needed to build a bootable Android 10 image for Asus Tinker Board (rk3288).
-Based on: https://github.com/radxa/manifests
+This repository contains the code and instructions needed to build a bootable Android 10 image for Asus Tinker Board (rk3288). Based on: https://github.com/radxa/manifests
 
 ## Current state
 You can build kernel, u-boot, system image and update image without errors.
@@ -8,8 +7,10 @@ I’m not sure, that update image is correct, because:
 - it's much smaller then update.img from 7.1.2 (984 MB vs 2,08 GB)
 - SpiImageTools_v1.44 can’t create data.bin file from update.img
 - mkupdate output is much different. Compare
+
 creating update.img for Android 7.1.2
-```q@Komarov-A:~/aosp/RKTools/linux/Linux_Pack_Firmware/rockdev$ ./collectImages.sh && ./mkupdate.sh
+```
+q@Komarov-A:~/aosp/RKTools/linux/Linux_Pack_Firmware/rockdev$ ./collectImages.sh && ./mkupdate.sh
 Done
 start to make update.img...
 Android Firmware Package Tool v1.62
@@ -62,7 +63,8 @@ q@Komarov-A:~/aosp/RKTools/linux/Linux_Pack_Firmware/rockdev$
 vs
 
 creating update.img for Android 10
-```q@Komarov-A:~/radxa/rockdev$ ./mkupdate_rk3288.sh
+```
+q@Komarov-A:~/radxa/rockdev$ ./mkupdate_rk3288.sh
 start to make update.img...
 Android Firmware Package Tool v1.66
 ------ PACKAGE ------
@@ -117,7 +119,8 @@ q@Komarov-A:~/radxa/rockdev$
 
 ## Build steps for Asus Tinker Board (rk3288)
 
-```--- install dependencies ---
+```
+--- install dependencies ---
 sudo apt-get update
 sudo apt-get install gcc-arm-linux-gnueabihf openjdk-8-jdk python git-core gnupg flex bison gperf build-essential \
 zip curl liblz4-tool zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 \
