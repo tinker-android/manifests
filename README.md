@@ -123,11 +123,11 @@ q@Komarov-A:~/radxa/rockdev$
 --- install dependencies ---
 sudo apt-get update
 sudo apt-get install gcc-arm-linux-gnueabihf openjdk-8-jdk python git-core gnupg flex bison gperf build-essential \
-zip curl liblz4-tool zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 \
-lib32ncurses5-dev x11proto-core-dev libx11-dev lib32z-dev ccache \
-libgl1-mesa-dev libxml2-utils xsltproc unzip mtools u-boot-tools \
-htop iotop sysstat iftop pigz bc device-tree-compiler lunzip \
-dosfstools vim-common parted udev libssl-dev python3
+    zip curl liblz4-tool zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 \
+    lib32ncurses5-dev x11proto-core-dev libx11-dev lib32z-dev ccache \
+    libgl1-mesa-dev libxml2-utils xsltproc unzip mtools u-boot-tools \
+    htop iotop sysstat iftop pigz bc device-tree-compiler lunzip \
+    dosfstools vim-common parted udev libssl-dev python3
 
 --- install the repo launcher ---
 mkdir ~/bin
