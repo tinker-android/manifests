@@ -82,7 +82,7 @@
   <project path="hardware/rockchip/audio" name="rk/hardware/rk29/audio" remote="rk-vendor" revision="794fcb0dc2dbf9bbdbe8398185c4e6ef1f45c8cd" upstream="rockchip-android-10" />
   <project path="frameworks/av" name="platform/frameworks/av" groups="pdk" remote="rk-vendor" revision="6af7135bbdbdf457bc59604e973aee7632623a1c" upstream="rockchip-android-10" />
 
-  <project path="kernel" name="rk/kernel" remote="rk-vendor" revision="48605a93ee55895d690736ab0080dd4da39eb1f8" upstream="rockchip-android-10" />
+  <project path="kernel" name="rk-kernel" remote="tinker-android" revision="81b0862d21ecc657e072190e7cbb89b102547eba" upstream="tinker-android-10" />
   <project path="u-boot" name="rk-u-boot" remote="tinker-android" revision="3d247bbca642ac3a85a07e45aaa7920f99b08423" upstream="tinker-android-10" />
   <project path="rkbin"  name="rk/rkbin"  remote="rk-vendor" revision="53a9ab286ba99382076f74488634a6ddcb61fe76" upstream="rockchip-android-10" />
   <project path="kernel/configs" name="kernel/configs" groups="vts,pdk" remote="rk-vendor" revision="b7764b40fe0fc1fa34e3f06e5791a2ba1b49db4d" upstream="rockchip-android-10" >
