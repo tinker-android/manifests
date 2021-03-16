@@ -64,56 +64,32 @@ vs
 
 creating update.img for Android 10
 ```
-q@Komarov-A:~/radxa/rockdev$ ./mkupdate_rk3288.sh
-start to make update.img...
-Android Firmware Package Tool v1.66
------- PACKAGE ------
-Add file: ./package-file
-Add file: ./Image/MiniLoaderAll.bin
-Add file: ./Image/parameter.txt
-Add file: ./Image/trust.img
-Add file: ./Image/uboot.img
-Add file: ./Image/misc.img
-Add file: ./Image/boot.img
-Add file: ./Image/dtbo.img
-Add file: ./Image/vbmeta.img
-Add file: ./Image/recovery.img
-Add file: ./Image/super.img
-Add CRC...
-Make firmware OK!
------- OK ------
-********RKImageMaker ver 1.66********
-Generating new image, please wait...
-Writing head info...
-Writing boot file...
-Writing firmware...
-Generating MD5 data...
-MD5 data generated successfully!
-New image generated successfully!
-Making update.img OK.
 q@Komarov-A:~/radxa/rockdev$ ls -la Image-rk3288_Android10/
-total 2789832
-drwxr-xr-x 2 q q       4096 Mar 12 20:03 .
-drwxr-xr-x 4 q q       4096 Mar 12 20:03 ..
--rw-r--r-- 1 q q        102 Mar 12 16:49 MiniLoaderAll.bin
--rw-r--r-- 1 q q    9660416 Mar 12 17:14 boot.img
+total 7068300
+drwxr-xr-x 2 q q       4096 Mar 15 16:23 .
+drwxr-xr-x 4 q q       4096 Mar 15 16:19 ..
+-rw-r--r-- 1 q q     180558 Mar 15 03:25 MiniLoaderAll.bin
+-rw-r--r-- 1 q q    9660416 Mar 15 16:19 boot.img
 -rw-r--r-- 1 q q       6129 Mar  9 22:52 config.cfg
 -rw-r--r-- 1 q q        607 Mar 10 20:54 dtbo.img
--rw-r--r-- 1 q q    8776804 Mar 12 17:09 kernel.img
+-rw-r--r-- 1 q q 3971499520 Mar 15 16:23 gpt.img
+-rw-r--r-- 1 q q     108544 Mar 15 03:25 idbloader.img
+-rw-r--r-- 1 q q    8776804 Mar 15 15:31 kernel.img
 -rw-r--r-- 1 q q      49152 Mar  9 22:55 misc.img
--rw-r--r-- 1 q q    1048616 Mar 12 17:15 odm.img
+-rw-r--r-- 1 q q    1048616 Mar 15 16:20 odm.img
 -rw-r--r-- 1 q q        638 Mar  9 22:52 parameter.txt
 -rw-r--r-- 1 q q      49152 Mar  9 22:55 pcba_small_misc.img
 -rw-r--r-- 1 q q      49153 Mar  9 22:55 pcba_whole_misc.img
--rw-r--r-- 1 q q   26445824 Mar 12 17:14 recovery.img
--rw-r--r-- 1 q q     107008 Mar 12 17:09 resource.img
--rw-r--r-- 1 q q  987677064 Mar 12 17:10 super.img
--rw-r--r-- 1 q q  640577660 Mar 12 17:14 system.img
--rw-r--r-- 1 q q    4194304 Mar 12 16:46 trust.img
--rw-r--r-- 1 q q    4194304 Mar 12 16:47 uboot.img
--rw-r--r-- 1 q q 1032237060 Mar 12 20:03 update.img
+-rw-r--r-- 1 q q   30357504 Mar 15 16:19 recovery.img
+-rw-r--r-- 1 q q     107008 Mar 15 15:31 resource.img
+-rw-r--r-- 1 q q 3263168512 Mar 15 16:23 super.img
+-rw-r--r-- 1 q q 1003442568 Mar 15 15:38 super.simg.img
+-rw-r--r-- 1 q q  640577660 Mar 15 16:20 system.img
+-rw-r--r-- 1 q q    4194304 Mar 15 14:52 trust.img
+-rw-r--r-- 1 q q    4194304 Mar 15 14:52 uboot.img
+-rw-r--r-- 1 q q 1052094468 Mar 15 16:22 update.img
 -rwxr-xr-x 1 q q       4096 Mar  9 22:52 vbmeta.img
--rw-r--r-- 1 q q  141680716 Mar 12 17:15 vendor.img
+-rw-r--r-- 1 q q  157446220 Mar 15 16:20 vendor.img
 q@Komarov-A:~/radxa/rockdev$
 ```
 
@@ -160,7 +136,7 @@ lunch rk3288_Android10-userdebug
 cd ~/radxa/u-boot
 make ARCH=arm tinker-rk3288_defconfig
 make -j8 ARCH=arm CROSS_COMPILE=/usr/bin/arm-linux-gnueabihf-
-cd ~/radxa/rbin
+cd ~/radxa/rkbin
 ~/radxa/u-boot/tools/boot_merger ~/radxa/rkbin/RKBOOT/RK3288MINIALL.ini
 cd ~/radxa/u-boot
 ./tools/loaderimage --pack --trustos ~/radxa/rkbin/bin/rk32/rk3288_tee_ta_v2.01.bin trust.img
@@ -182,6 +158,7 @@ ln -s RKTools/linux/Linux_Pack_Firmware/rockdev/ rockdev
 cd rockdev
 ln -s Image-rk3288_Android10 Image
 ./mkupdate_rk3288.sh
+./android-gpt.sh
 ```
 
 ## EVERYTHING BELOW IS THE ORIGINAL README.md FILE
